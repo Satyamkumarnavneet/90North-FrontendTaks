@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            margin-top: 60px;
+        }
+        .left-menu {
+            width: 250px;
+            background: #f4f4f4;
+            padding: 15px;
+            height: calc(100vh - 60px);
+            transition: width 0.3s;
+            overflow: hidden;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background: #fff;
+        }
+        .right-panel {
+            width: 250px;
+            background: #e4e4e4;
+            padding: 15px;
+            height: calc(100vh - 60px);
+        }
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+        .toggle-menu {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            background: #555;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-menu, .right-panel {
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-width: 767px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-menu, .right-panel {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">Dashboard Navigation</div>
+    <div class="container">
+        <div class="left-menu" id="leftMenu">
+            <button class="toggle-menu" onclick="toggleMenu()">Toggle Menu</button>
+            <p>Home</p>
+            <p>Analytics</p>
+            <p>Settings</p>
+        </div>
+        <div class="main-content">Welcome to the Dashboard</div>
+        <div class="right-panel">Notifications & Updates</div>
+    </div>
+    <div class="footer">Dashboard Footer</div>
+    <script src="scripts.js"></script>
+</body>
+</html>
